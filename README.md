@@ -25,13 +25,18 @@
     - ```npm install jsdoc --save-dev```
     - Acrescentei um script para gerar a documentação no projeto: no package.json adicionei uma vírgula e abaixo do script de test adicionei a opção: ```"doc":  "jsdoc -r src -d docs"``` (jsdoc vai chamar o jsdoc, -r vai fazer de forma recursiva, src é a pasta onde vai buscar os arquivos, -d é o parâmetro para especificar que a documentação será salva em um diretório específico, docs foi o nome do diretório especificado").
     - ao rodar o comando ```npm run doc``` no terminal, o diretório docs é criado automaticamente e as documentações são inseridas nesse diretório. Mas pra dar certo tive que criar a pasta src e criar um arquivo js dentro dessa pasta, no caso criei o arquivo chamado "matematica.js" com os comentários no arquivo.
-- Não consegui fazer gerar a documentação para o arquivo de test, ao tentar alterar o script de doc: ```"doc": "jsdoc -r src -d docs"``` por ```"doc": "jsdoc -r src test -d docs"``` e rodar o comando ```npm run doc``` parece que não dá certo, tentei também adicionando um script diferente: ```"test-doc": "jsdoc -r test -d docs"``` que também não pareceu dar certo ao rodar o comando ```npm run test-doc```. 
-
+- Instalei o reporter do Qase para Jest com o comando:
+    - ```npm install jest-qase-reporter --save-dev```
+- Instalei o pacote dotenv para carregar as variáveis de ambiente do arquivo .env com o comando:
+    - ```npm install dotenv```
+- Criei o arquivo .env na raiz do projeto e adicionei as variáveis de ambiente, também foi criado o arquivo de configurações do jest chamado jest.config.js na raiz do projeto para carregar as variáveis de ambiente do arquivo .env.
+- No portifólio do github foi necessário criar a secret QASE_API_TOKEN para que o reporter do Qase funcione corretamente.
+- Foi criado o arquivo qase-workflow.js na raiz do projeto para fazer a integração do Jest com o Qase.
 
 ## Comandos úteis:
 
 - ```"npm run doc"``` Para gerar a documentação do projeto.
-- ```"npm run test"``` Para rodar os testes do projeto.
+- ```"npm run test"``` Para rodar os testes do projeto (ao rodar o comando o reporter do Qase é chamado e os resultados dos testes são enviados para o Qase.
 - ```"npm run test -- --coverage"``` Para rodar os testes do projeto e mostrar o relatório com a cobertura dos testes.
 - ```"npm run test -- --watchAll"``` Para rodar os testes do projeto em modo watch, ou seja, ele fica observando as alterações nos arquivos e roda os testes automaticamente.
     
