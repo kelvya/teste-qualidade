@@ -1,0 +1,17 @@
+{
+    "env": {
+        //"plugins": ["jest"] // Adicione o plugin Jest
+        "browser": true,
+        "es2021": true
+    },
+    "extends": "airbnb-base",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "rules": {
+        "no-console": "off", // Desativa o aviso sobre o uso de console.log
+        "jest/no-disabled-tests": "warn" // Ativa o aviso sobre testes desabilitados
+    },
+    "plugins": ["jest"] // Adicione o plugin Jest
+}
