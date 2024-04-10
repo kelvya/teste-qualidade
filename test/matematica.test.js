@@ -13,7 +13,7 @@ describe('Função que soma dois númeos', () => {
        * @expect {number} O resultado esperado.
        * @toBe {number} O resultado da função.
        */
-    expect(somarNumeros(2, 3)).toBe(5);
+    expect(somarNumeros(2, 3)).toBe(6);
   });
 });
 
@@ -27,7 +27,7 @@ describe('Função que subtrai dois númeos', () => {
        * @expect {number} O resultado esperado.
        * @toBe {number} O resultado da função.
        */
-    expect(subtrairNumeros(5, 3)).toBe(2);
+    expect(subtrairNumeros(5, 3)).toBe(1);
   });
 });
 
