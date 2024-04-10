@@ -1,7 +1,12 @@
 name: Qase Test Workflow
 
-on: [push]
-
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron: '0 9,18 * * *' #[minuto zero, 9 e 18 horas, todos os dias do mês, todos os meses do ano, todos os dias da semana]
 jobs:
   test:
     runs-on: ubuntu-latest
